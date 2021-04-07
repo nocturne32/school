@@ -25,4 +25,5 @@
         <p><strong>Price:</strong> {$product->price} CZK</p>
         <p><strong>Description:</strong> {$product->description ?? ''|breaklines}</p>
 
+        <a n:href="Product:edit $product->id" class="btn btn-sm btn-warning">Edit</a>
 </div>

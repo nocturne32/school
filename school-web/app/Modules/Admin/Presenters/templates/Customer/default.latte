@@ -27,6 +27,7 @@
             <thead>
             <tr>
                 <th>Order ID</th>
+                <th>Customer</th>
                 <th>Ordered at</th>
                 <th>Actions</th>
             </tr>
@@ -35,6 +36,7 @@
             <tbody>
             <tr n:foreach="$orders as $order">
                 <td>{$order->id}</td>
+                <td><a n:href="Customer: $customer->id">{$customer->email}</a></td>
                 <td>{$order->ordered_at|date:'d.m.Y H:i:s'}</td>
                 <td>
                     <a n:href="Order: $order->id" class="btn btn-sm btn-primary">Detail</a>
