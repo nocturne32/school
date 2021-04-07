@@ -38,14 +38,16 @@ class ProductFormControl extends BaseControl
     }
 
 
-    public function render(): void
+    public function render(string $title = 'Create product'): void
     {
+        $this->template->title = $title;
+
         $this->template->_shared = __DIR__ . '/../@shared/forms.latte';
         $this->template->setFile(__DIR__ . '/templates/form.latte');
         $this->template->render();
     }
 
-    public function renderEdit(): void
+    public function renderEdit(string $title = 'Edit product'): void
     {
         $id = $this->productId;
 
@@ -58,6 +60,8 @@ class ProductFormControl extends BaseControl
         if ($product) {
             $this['formEdit']->setDefaults($product);
         }
+
+        $this->template->title = $title;
 
         $this->template->_shared = __DIR__ . '/../@shared/forms.latte';
         $this->template->setFile(__DIR__ . '/templates/form_edit.latte');

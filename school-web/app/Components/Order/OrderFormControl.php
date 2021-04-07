@@ -42,8 +42,10 @@ class OrderFormControl extends BaseControl
     }
 
 
-    public function render(): void
+    public function render(string $title = 'Place an order'): void
     {
+        $this->template->title = $title;
+
         $this->template->_shared = __DIR__ . '/../@shared/forms.latte';
         $this->template->setFile(__DIR__ . '/templates/form.latte');
         $this->template->render();
