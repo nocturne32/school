@@ -19,12 +19,12 @@ class OrderListFacade
     
     public function findOrders(): ArrayHash
     {
-        return ArrayHash::from($this->client->getOrdersData());
+        return ArrayHash::from($this->client->getOrders()->getAll());
     }
 
     public function findCustomerOrdersById(int $customerId): ArrayHash
     {
-        return ArrayHash::from($this->client->getOrdersDataByCustomerId($customerId));
+        return ArrayHash::from($this->client->getCustomers()->getOrdersByCustomerId($customerId));
     }
 
 }

@@ -19,12 +19,12 @@ class CustomerListFacade
 
     public function findCustomers(): ArrayHash
     {
-        return ArrayHash::from($this->client->getCustomersData());
+        return ArrayHash::from($this->client->getCustomers()->getAll());
     }
 
     public function findCustomersAsPairs(): array
     {
-        return Collection::from($this->client->getCustomersData())
+        return Collection::from($this->client->getCustomers()->getAll())
             ->mapcat(function ($customer) {
                 return [$customer['id'] => $customer['email']];
             })

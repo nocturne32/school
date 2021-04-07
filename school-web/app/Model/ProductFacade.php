@@ -18,22 +18,22 @@ class ProductFacade
 
     public function createProduct(ArrayHash $product): array
     {
-        return $this->client->postProductData($product);
+        return $this->client->getProducts()->post($product);
     }
 
     public function updateProduct(int $productId, ArrayHash $product): array
     {
-        return $this->client->putProductData($productId, $product);
+        return $this->client->getProducts()->put($productId, $product);
     }
 
     public function getProductById(int $productId): ArrayHash
     {
-        return ArrayHash::from($this->client->getProductDataById($productId));
+        return ArrayHash::from($this->client->getProducts()->get($productId));
     }
 
     public function deleteById(int $productId): array
     {
-        return $this->client->deleteProductData($productId);
+        return $this->client->getProducts()->delete($productId);
     }
 
 }

@@ -22,10 +22,10 @@ class CustomerFacade
         $customer = $this->findCustomerByEmail($customerData->email);
 
         if ($customer->count()) {
-            $this->client->putCustomerData((int)$customer['id'], $customerData);
-            $customer = ArrayHash::from($this->client->getCustomerDataById($customer['id']));
+            $this->client->getCustomers()->put((int)$customer['id'], $customerData);
+            $customer = ArrayHash::from($this->client->getCustomers()->get($customer['id']));
         } else {
-            $this->client->postCustomerData($customerData);
+            $this->client->getCustomers()->post($customerData);
             $customer = $this->findCustomerByEmail($customerData->email);
         }
 
@@ -34,12 +34,12 @@ class CustomerFacade
 
     public function getCustomerById(int $customerId): ArrayHash
     {
-        return ArrayHash::from($this->client->getCustomerDataById($customerId));
+        return ArrayHash::from($this->client->getCustomers()->get($customerId));
     }
 
     public function findCustomerByEmail(string $email): ArrayHash
     {
-        return ArrayHash::from(Collection::from($this->client->getCustomersData())
+        return ArrayHash::from(Collection::from($this->client->getCustomers()->getAll())
             ->filter(function ($customer) use ($email) {
                 return $customer['email'] === $email;
             })->flatten()
@@ -48,6 +48,6 @@ class CustomerFacade
 
     public function deleteById(int $customerId): array
     {
-        return $this->client->deleteCustomerData($customerId);
+        return $this->client->getCustomers()->delete($customerId);
     }
 }

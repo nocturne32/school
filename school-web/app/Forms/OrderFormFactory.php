@@ -23,9 +23,9 @@ class OrderFormFactory
 
         $form->addEmail('email', 'Email')
             ->setRequired();
-        $form->addText('firstname', 'Firstname')
+        $form->addText('firstname', 'First name')
             ->setRequired();
-        $form->addText('lastname', 'Lastname')
+        $form->addText('lastname', 'Last name')
             ->setRequired();
         $form->addCheckboxList('products', 'Products')
             ->setRequired();

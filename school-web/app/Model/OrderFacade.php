@@ -18,16 +18,16 @@ class OrderFacade
 
     public function createOrder(ArrayHash $order): array
     {
-        return $this->client->postOrderData($order);
+        return $this->client->getOrders()->post($order);
     }
 
     public function findOrderById(int $orderId): ArrayHash
     {
-        return ArrayHash::from($this->client->getOrderDataById($orderId));
+        return ArrayHash::from($this->client->getOrders()->get($orderId));
     }
 
     public function deleteById(int $orderId): array
     {
-        return $this->client->deleteOrderData($orderId);
+        return $this->client->getOrders()->delete($orderId);
     }
 }

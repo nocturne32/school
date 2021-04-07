@@ -112,7 +112,7 @@ class ProductFormControl extends BaseControl
 
     protected function resolveRedirect(): void
     {
-        $this->presenter->redirect('this');
+        $this->presenter->redirect('ProductList:');
     }
 
 }

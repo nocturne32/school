@@ -16,9 +16,9 @@ di:
 		parameters: no
 		tags: no
 
-
 services:
 	- App\Router\RouterFactory::createRouter
+	- App\Api\EndpointFactory
 	- App\Api\ApiClient('http://localhost:8081/api/')
 
 search:
