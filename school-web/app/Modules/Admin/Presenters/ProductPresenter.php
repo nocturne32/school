@@ -38,7 +38,7 @@ final class ProductPresenter extends BasePresenter
             $this->template->product = $product;
 
         } catch (ClientException $e) {
-            $this->error('Page Not Found');
+            $this->error('Page not found');
         }
     }
 
