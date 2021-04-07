@@ -34,7 +34,17 @@
                     {elseif $input->getOption(type) === button}
                         {input $input class => "btn btn-primary"}
                     {elseif $input->getOption(type) === checkbox}
-                        <div class="checkbox">{input $input}</div>
+                        {if $input instanceof Nette\Forms\Controls\Checkbox}
+                            <div class="checkbox">
+                                {input $input}
+                            </div>
+                        {else}
+                            {foreach $input->items as $key => $label}
+                                <div class="checkbox">
+                                    {input $input->getName():$key}&nbsp;{label $input->getName():$key /}
+                                </div>
+                            {/foreach}
+                        {/if}
                     {elseif $input->getOption(type) === radio}
                         <div class="radio">{input $input}</div>
                     {else}

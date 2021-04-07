@@ -34,7 +34,7 @@ class OrderFormFactory
         $form->addText('postal_code', 'Postal code')
             ->setRequired();
         $form->addCheckboxList('products', 'Products')
-            ->setRequired();
+            ->setRequired('Choose at least one product');
 
         $form->addSubmit('submit', 'Order');
 
