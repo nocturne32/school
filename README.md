@@ -9,8 +9,11 @@ The goal of the project was to create a web application and REST API to manage C
 or 
 `php -S localhost:8081 -t school-rest-api/public` 
 
+[Documentation](/school-rest-api)
+
 # Web application
 `yarn serve-web`
 or
 `php -S localhost:8000 -t school-web/www` 
 
+[Documentation](/school-web)
