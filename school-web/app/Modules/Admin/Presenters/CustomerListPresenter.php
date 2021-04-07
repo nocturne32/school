@@ -26,7 +26,7 @@ final class CustomerListPresenter extends BasePresenter
         try {
             $this->template->customers = $this->customerListFacade->findCustomers();
         } catch (ClientException $e) {
-            $this->error('Page Not Found');
+            $this->error('Page not found');
         }
     }
 

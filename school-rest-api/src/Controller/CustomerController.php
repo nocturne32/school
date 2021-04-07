@@ -81,6 +81,13 @@ class CustomerController extends AbstractApiController
             $customerId = (int)$request->get('id');
             $isDeleted = $customerFacade->delete($customerId);
 
+            if (!$isDeleted) {
+                return $this->handleResponse([
+                    'code' => Response::HTTP_NOT_FOUND,
+                    'message' => 'Customer not found'
+                ], Response::HTTP_NOT_FOUND);
+            }
+
         } catch (CustomerDeleteFailedException $e) {
             return $this->handleResponse([
                 'code' => Response::HTTP_BAD_REQUEST,

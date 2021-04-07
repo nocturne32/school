@@ -28,7 +28,7 @@ final class OrderListPresenter extends BasePresenter
         try {
             $this->template->orders = $this->orderListFacade->findOrders();
         } catch (ClientException $e) {
-            $this->error('Page Not Found');
+            $this->error('Page not found');
         }
     }
 

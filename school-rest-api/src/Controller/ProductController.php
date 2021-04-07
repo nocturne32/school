@@ -80,6 +80,13 @@ class ProductController extends AbstractApiController
             $productId = (int)$request->get('id');
             $isDeleted = $productFacade->delete($productId);
 
+            if (!$isDeleted) {
+                return $this->handleResponse([
+                    'code' => Response::HTTP_NOT_FOUND,
+                    'message' => 'Product not found'
+                ], Response::HTTP_NOT_FOUND);
+            }
+
         } catch (ProductDeleteFailedException $e) {
             return $this->handleResponse([
                 'code' => Response::HTTP_BAD_REQUEST,

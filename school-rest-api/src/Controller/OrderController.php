@@ -80,6 +80,13 @@ class OrderController extends AbstractApiController
             $orderId = (int)$request->get('id');
             $isDeleted = $orderFacade->delete($orderId);
 
+            if (!$isDeleted) {
+                return $this->handleResponse([
+                    'code' => Response::HTTP_NOT_FOUND,
+                    'message' => 'Order not found'
+                ], Response::HTTP_NOT_FOUND);
+            }
+
         } catch (OrderDeleteFailedException $e) {
             return $this->handleResponse([
                 'code' => Response::HTTP_BAD_REQUEST,

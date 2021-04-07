@@ -28,13 +28,12 @@ final class CustomerPresenter extends BasePresenter
     public function actionDefault(int $id): void
     {
         try {
-            $customer = $this->customerFacade->getCustomerById($id);
             $customerOrders = $this->customerFacade->findCustomerOrdersById($id);
 
-            $this->template->customer = $customer;
+            $this->template->customer = $customerOrders->customer;
             $this->template->orders = $customerOrders->orders;
         } catch (ClientException $e) {
-            $this->error('Page Not Found');
+            $this->error('Page not found');
         }
 
     }

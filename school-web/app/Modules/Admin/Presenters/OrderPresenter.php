@@ -26,7 +26,7 @@ final class OrderPresenter extends BasePresenter
             $this->template->products = $order->products;
 
         } catch (ClientException $e) {
-            $this->error('Page Not Found');
+            $this->error('Page not found');
         }
     }
 

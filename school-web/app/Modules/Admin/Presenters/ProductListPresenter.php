@@ -26,7 +26,7 @@ final class ProductListPresenter extends BasePresenter
         try {
             $this->template->products = $this->productListFacade->findProducts();
         } catch (ClientException $e) {
-            $this->error('Page Not Found');
+            $this->error('Page not found');
         }
     }
 
