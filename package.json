@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "serve-api": "php -S localhost:8081 -t school-rest-api/public",
+    "serve-web": "php -S localhost:8000 -t school-web/www"
+  }
+}
+

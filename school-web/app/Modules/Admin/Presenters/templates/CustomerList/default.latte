@@ -1,0 +1,46 @@
+{block title}Customer list{/block}
+
+{block content}
+
+<div class="row">
+
+	<div class="col-lg-12">
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a n:href="Homepage:">Home</a></li>
+				<li class="breadcrumb-item active" aria-current="page">{include title}</li>
+			</ol>
+		</nav>
+	</div>
+
+	<div class="col-lg-12">
+
+		<h2>{include title}</h2>
+		<table class="table table-striped table-borderless table-hover table-responsive-sm">
+			<thead>
+			<tr>
+				<th>Customer ID</th>
+				<th>Email</th>
+				<th>Firstname</th>
+				<th>Lastname</th>
+				<th>Actions</th>
+			</tr>
+			</thead>
+
+			<tbody>
+			<tr n:foreach="$customers as $customer">
+				<td>{$customer->id}</td>
+				<td>{$customer->email}</td>
+				<td>{$customer->firstname ?? ''}</td>
+				<td>{$customer->lastname ?? ''}</td>
+				<td>
+					<a n:href="Customer: $customer->id" class="btn btn-sm btn-primary">Detail</a>&nbsp;
+					<a n:href="deleteCustomer! $customer->id"
+							class="btn btn-sm btn-danger"
+							onclick="return confirm('Are you sure you want to delete this customer?')">Delete</a></td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>

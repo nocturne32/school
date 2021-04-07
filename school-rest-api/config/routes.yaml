@@ -1,0 +1,100 @@
+customer:
+  path: /api/customers/{id}
+  controller: App\Controller\CustomerController::indexAction
+  methods: [ GET ]
+  requirements:
+    id: '\d+'
+
+customer_create:
+  path: /api/customers
+  controller: App\Controller\CustomerController::createAction
+  methods: [ POST ]
+
+customer_update:
+  path: /api/customers/{id}
+  controller: App\Controller\CustomerController::updateAction
+  methods: [ PUT ]
+  requirements:
+    id: '\d+'
+
+customer_delete:
+  path: /api/customers/{id}
+  controller: App\Controller\CustomerController::deleteAction
+  methods: [ DELETE ]
+  requirements:
+    id: '\d+'
+
+customer_list:
+  path: /api/customers
+  controller: App\Controller\CustomerListController::indexAction
+  methods: [ GET ]
+
+customer_orders:
+  path: /api/customers/{id}/orders
+  controller: App\Controller\CustomerController::ordersAction
+  methods: [ GET ]
+  requirements:
+    id: '\d+'
+
+order:
+  path: /api/orders/{id}
+  controller: App\Controller\OrderController::indexAction
+  methods: [ GET ]
+  requirements:
+    id: '\d+'
+
+order_create:
+  path: /api/orders
+  controller: App\Controller\OrderController::createAction
+  methods: [ POST ]
+
+order_update:
+  path: /api/orders/{id}
+  controller: App\Controller\OrderController::updateAction
+  methods: [ PUT ]
+  requirements:
+    id: '\d+'
+
+order_delete:
+  path: /api/orders/{id}
+  controller: App\Controller\OrderController::deleteAction
+  methods: [ DELETE ]
+  requirements:
+    id: '\d+'
+
+order_list:
+  path: /api/orders
+  controller: App\Controller\OrderListController::indexAction
+  methods: [ GET ]
+
+product:
+  path: /api/products/{id}
+  controller: App\Controller\ProductController::indexAction
+  methods: [ GET ]
+  requirements:
+    id: '\d+'
+
+product_create:
+  path: /api/products
+  controller: App\Controller\ProductController::createAction
+  methods: [ POST ]
+
+product_update:
+  path: /api/products/{id}
+  controller: App\Controller\ProductController::updateAction
+  methods: [ PUT ]
+  requirements:
+    id: '\d+'
+
+product_delete:
+  path: /api/products/{id}
+  controller: App\Controller\ProductController::deleteAction
+  methods: [ DELETE ]
+  requirements:
+    id: '\d+'
+
+product_list:
+  path: /api/products
+  controller: App\Controller\ProductListController::indexAction
+  methods: [ GET ]
+

@@ -1,0 +1,53 @@
+{define printFormErrors, $form}
+    <div n:foreach="$form->errors as $error"
+            class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error:</strong> {$error}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{/define}
+
+{define renderBootstrap $formName, $title}
+    <div class="card">
+        <div class="card-header">
+            <h2 class="text-center">{$title}</h2>
+        </div>
+        <div class="card-body">
+
+            <form n:name=$formName class=form-horizontal>
+
+                {include printFormErrors $form}
+
+                <div n:foreach="$form->controls as $name => $input"
+                        n:if="!$input->getOption(rendered) && $input->getOption(type) !== hidden"
+                        n:class="form-group, $input->getOption(type) === 'submit' ? 'text-center',
+                        $input->required ? required, $input->error ? has-error">
+
+                    <label for="{$input->name}">{label $input /}</label>
+                    <br>
+
+                    {if $input->getOption(type) === file}
+                        {input $input}
+                    {elseif $input->getOption(type) === textarea}
+                        {input $input class => "form-control", style => "width:100%"}
+                    {elseif $input->getOption(type) === button}
+                        {input $input class => "btn btn-primary"}
+                    {elseif $input->getOption(type) === checkbox}
+                        <div class="checkbox">{input $input}</div>
+                    {elseif $input->getOption(type) === radio}
+                        <div class="radio">{input $input}</div>
+                    {else}
+                        {input $input class => "form-control"}
+                    {/if}
+
+                    <span class="help-block" n:ifcontent>
+                        <small>{$input->error ?: $input->getOption(description)}</small>
+                    </span>
+                </div>
+
+            </form>
+        </div>
+    </div>
+{/define}
+

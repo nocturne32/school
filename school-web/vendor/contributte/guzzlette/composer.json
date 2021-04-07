@@ -1,0 +1,51 @@
+{
+  "name": "contributte/guzzlette",
+  "description": "Guzzle integration into Nette Framework",
+  "keywords": [
+    "nette",
+    "guzzle"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "homepage": "https://github.com/contributte/guzzlette",
+  "authors": [
+    {
+      "name": "Milan Felix Šulc",
+      "homepage": "https://f3l1x.io"
+    },
+    {
+      "name": "Martin Macho",
+      "email": "matyxcz@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.2",
+    "guzzlehttp/guzzle": "^6.3.3|^7.0",
+    "nette/di": "~3.0.0",
+    "tracy/tracy": "^2.6.0"
+  },
+  "require-dev": {
+    "mockery/mockery": "^1.0",
+    "ninjify/nunjuck": "^0.4",
+    "ninjify/qa": "^0.12",
+    "phpstan/phpstan": "^0.12",
+    "phpstan/phpstan-deprecation-rules": "^0.12",
+    "phpstan/phpstan-nette": "^0.12",
+    "phpstan/phpstan-strict-rules": "^0.12"
+  },
+  "autoload": {
+    "psr-4": {
+      "Contributte\\Guzzlette\\": "src"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "3.3.x-dev"
+    }
+  }
+}

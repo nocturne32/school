@@ -1,0 +1,43 @@
+parameters:
+
+
+application:
+	errorPresenter: Error
+	mapping:
+		*: App\Modules\*\Presenters\*Presenter
+
+
+session:
+	expiration: 14 days
+
+
+di:
+	export:
+		parameters: no
+		tags: no
+
+
+services:
+	- App\Router\RouterFactory::createRouter
+	- App\Api\ApiClient('http://localhost:8081/api/')
+
+search:
+    components:
+        in: %appDir%/Components
+        classes:
+            - *Factory
+    forms:
+        in: %appDir%/Forms
+        classes:
+            - *Factory
+    model:
+        in: %appDir%/Model
+
+extensions:
+	guzzle: Contributte\Guzzlette\DI\GuzzleExtension
+
+guzzle:
+	debug: %debugMode%
+	client: # config for GuzzleHttp\Client
+		timeout: 30
+

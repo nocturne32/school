@@ -1,0 +1,25 @@
+{block title}Create product{/block}
+
+{block content}
+
+<div class="row">
+
+    <div class="col-lg-12">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a n:href="Homepage:">Home</a></li>
+                <li class="breadcrumb-item"><a n:href="ProductList:">Product list</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{include title}</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="col-lg-12">
+
+        <h2>{include title}</h2>
+
+        <hr>
+
+        {control productFormControl}
+
+</div>

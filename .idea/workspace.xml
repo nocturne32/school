@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cd2bcc8a-fd50-4513-a1c2-0c64aa42c755" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/school-web/app/Modules/Admin/Presenters/CustomerListPresenter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/school-web/app/Modules/Admin/Presenters/templates/@layout.latte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/school-web/app/Modules/Admin/Presenters/templates/Homepage/default.latte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-rest-api/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/school-rest-api/config/routes.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-rest-api/src/Controller/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/school-rest-api/src/Controller/CustomerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-rest-api/src/Controller/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/school-rest-api/src/Controller/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-rest-api/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/school-rest-api/src/Entity/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-web/app/Presenters/Error4xxPresenter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-web/app/Presenters/ErrorPresenter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-web/app/Presenters/HomepagePresenter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-web/app/Presenters/templates/@layout.latte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-web/app/Presenters/templates/Error/403.latte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-web/app/Presenters/templates/Error/404.latte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-web/app/Presenters/templates/Error/405.latte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-web/app/Presenters/templates/Error/410.latte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-web/app/Presenters/templates/Error/4xx.latte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-web/app/Presenters/templates/Error/500.phtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-web/app/Presenters/templates/Error/503.phtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-web/app/Presenters/templates/Homepage/default.latte" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-web/app/Router/RouterFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/school-web/app/Router/RouterFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-web/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/school-web/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-web/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/school-web/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-web/config/common.neon" beforeDir="false" afterPath="$PROJECT_DIR$/school-web/config/common.neon" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-web/vendor/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/school-web/vendor/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-web/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/school-web/vendor/composer/ClassLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-web/vendor/composer/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/school-web/vendor/composer/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-web/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/school-web/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-web/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/school-web/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-web/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/school-web/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-web/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/school-web/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-web/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/school-web/vendor/composer/autoload_real.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-web/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/school-web/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/school-web/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/school-web/vendor/composer/installed.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/school-web/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/school-web" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/school-web/vendor/nette/di" />
+      <path value="$PROJECT_DIR$/school-web/vendor/nette/application" />
+      <path value="$PROJECT_DIR$/school-web/vendor/nette/database" />
+      <path value="$PROJECT_DIR$/school-web/vendor/nette/security" />
+      <path value="$PROJECT_DIR$/school-web/vendor/nette/mail" />
+      <path value="$PROJECT_DIR$/school-web/vendor/nette/robot-loader" />
+      <path value="$PROJECT_DIR$/school-web/vendor/nette/routing" />
+      <path value="$PROJECT_DIR$/school-web/vendor/nette/tester" />
+      <path value="$PROJECT_DIR$/school-web/vendor/nette/http" />
+      <path value="$PROJECT_DIR$/school-web/vendor/nette/bootstrap" />
+      <path value="$PROJECT_DIR$/school-web/vendor/symfony/thanks" />
+      <path value="$PROJECT_DIR$/school-web/vendor/nette/schema" />
+      <path value="$PROJECT_DIR$/school-web/vendor/latte/latte" />
+      <path value="$PROJECT_DIR$/school-web/vendor/nette/neon" />
+      <path value="$PROJECT_DIR$/school-web/vendor/nette/forms" />
+      <path value="$PROJECT_DIR$/school-web/vendor/nette/component-model" />
+      <path value="$PROJECT_DIR$/school-web/vendor/nette/finder" />
+      <path value="$PROJECT_DIR$/school-web/vendor/tracy/tracy" />
+      <path value="$PROJECT_DIR$/school-web/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/school-web/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/school-web/vendor/composer" />
+      <path value="$PROJECT_DIR$/school-web/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/school-web/vendor/contributte/guzzlette" />
+      <path value="$PROJECT_DIR$/school-web/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/school-web/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/school-web/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/school-web/vendor/dusank/knapsack" />
+      <path value="$PROJECT_DIR$/school-web/vendor/nette/caching" />
+      <path value="$PROJECT_DIR$/school-web/vendor/nette/php-generator" />
+      <path value="$PROJECT_DIR$/school-web/vendor/nette/utils" />
+      <path value="$PROJECT_DIR$/school-web/vendor/nextras/secured-links" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1qoHzCQxSAr9zbcExoGd8tZFifC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/school-web/app/Components/Product/templates" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\school\school-web\app\Components\Product\templates" />
+      <recent name="D:\GitHub\school\school-web\app\Modules\Admin\Presenters\templates\Product" />
+      <recent name="D:\GitHub\school\school-web\app\Forms" />
+      <recent name="D:\GitHub\school\school-web\app\Components" />
+      <recent name="D:\GitHub\school\school-web\app\Model" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cd2bcc8a-fd50-4513-a1c2-0c64aa42c755" name="Default Changelist" comment="" />
+      <created>1617739284292</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617739284292</updated>
+      <workItem from="1617739285854" duration="1953000" />
+      <workItem from="1617741266432" duration="4050000" />
+      <workItem from="1617745473329" duration="2429000" />
+      <workItem from="1617779259992" duration="9000" />
+      <workItem from="1617780220620" duration="3489000" />
+      <workItem from="1617784089467" duration="703000" />
+      <workItem from="1617788250084" duration="155000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="989" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1617780328429">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="989" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1400/-1920.116.1920.1040@0.0.2560.1400" timestamp="1617780328429" />
+    <state x="1010" y="454" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617784673230">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1010" y="454" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.2560.1400/-1920.116.1920.1040@0.0.2560.1400" timestamp="1617784673230" />
+    <state x="1015" y="502" key="NewPhpClassDialog" timestamp="1617742767533">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1015" y="502" key="NewPhpClassDialog/0.0.2560.1400/-1920.116.1920.1040@0.0.2560.1400" timestamp="1617742767533" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1617740835069">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400/-1920.116.1920.1040@0.0.2560.1400" timestamp="1617740835069" />
+  </component>
+</project>

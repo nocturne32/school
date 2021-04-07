@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="School project">
+
+    <title>{ifset title}{include title|stripHtml} | {/ifset}David Pocar</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+          integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+
+        <nav class="navbar navbar-expand-lg mb-4 static-top">
+            <a class="navbar-brand" n:href="Homepage:">
+                <h1 class="float-right text-primary">Front</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#topbar_nav" aria-controls="topbar_nav"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-lg-end text-center" id="topbar_nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-primary" n:href="Homepage:">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-primary" n:href=":Admin:Homepage:">
+                            Admin
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </div>
+</header>
+
+<main>
+    <div class="container">
+
+        <div n:snippet="flashes" class="mb-4">
+            <div n:foreach="$flashes as $flash"
+                    n:class="alert, $flash->type, alert-dismissible, fade, show" role="alert">
+                <strong></strong> {$flash->message}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+
+        {include content}
+
+    </div>
+</main>
+
+{block scripts}
+    <script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+            crossorigin="anonymous"></script>
+
+    <script src="{$basePath}/assets/js/main.js"></script>
+{/block}
+</body>
+</html>
