@@ -167,6 +167,7 @@ MariaDB database.
                     }
                 ],
                 "ordered_at": "2021-04-03T12:54:59+02:00",
+                "is_paid": false,
                 "total_price": 30.0
             }
         ]
