@@ -4,6 +4,12 @@ This is a school project created by David Pocar.
 
 The goal of the project was to create a REST API to manage Customers, Products and Orders.
 
+# Startup
+
+1. `composer install`
+2. `php bin/console doctrine:database:create`
+3. `php bin/console doctrine:schema:create`
+
 # Architecture
 
 [Architecture sketch](https://i.imgur.com/8TJSxyZ.png)

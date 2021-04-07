@@ -21,15 +21,15 @@ class CustomerFacade
     {
         $customer = $this->findCustomerByEmail($customerData->email);
 
-        if ($customer) {
+        if ($customer->count()) {
             $this->client->putCustomerData((int)$customer['id'], $customerData);
-            $customer = $this->client->getCustomerDataById($customer['id']);
+            $customer = ArrayHash::from($this->client->getCustomerDataById($customer['id']));
         } else {
             $this->client->postCustomerData($customerData);
             $customer = $this->findCustomerByEmail($customerData->email);
         }
 
-        return ArrayHash::from($customer);
+        return $customer;
     }
 
     public function getCustomerById(int $customerId): ArrayHash
