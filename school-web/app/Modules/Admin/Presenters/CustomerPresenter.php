@@ -29,7 +29,7 @@ final class CustomerPresenter extends BasePresenter
     {
         try {
             $customer = $this->customerFacade->getCustomerById($id);
-            $customerOrders = $this->orderListFacade->findCustomerOrdersById($id);
+            $customerOrders = $this->customerFacade->findCustomerOrdersById($id);
 
             $this->template->customer = $customer;
             $this->template->orders = $customerOrders->orders;

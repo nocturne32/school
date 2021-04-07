@@ -46,6 +46,11 @@ class CustomerFacade
             ->toArray());
     }
 
+    public function findCustomerOrdersById(int $customerId): ArrayHash
+    {
+        return ArrayHash::from($this->client->getCustomers()->getOrdersByCustomerId($customerId));
+    }
+
     public function deleteById(int $customerId): array
     {
         return $this->client->getCustomers()->delete($customerId);

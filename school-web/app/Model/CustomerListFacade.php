@@ -22,14 +22,5 @@ class CustomerListFacade
         return ArrayHash::from($this->client->getCustomers()->getAll());
     }
 
-    public function findCustomersAsPairs(): array
-    {
-        return Collection::from($this->client->getCustomers()->getAll())
-            ->mapcat(function ($customer) {
-                return [$customer['id'] => $customer['email']];
-            })
-            ->toArray();
-    }
-
 
 }
