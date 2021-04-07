@@ -20,7 +20,7 @@
         <p>
             <strong>Ordered at:</strong> {$order->ordered_at|date:'d.m.Y H:i:s'}
             <br>
-            <strong>Ordered by:</strong>
+            <strong>Customer:</strong>
             <a n:href="Customer: $customer->id">{$customer->email}</a>
             <br>
             <strong>Status:</strong> {$order->is_paid ? 'Order is paid' : 'Order is not paid'}
