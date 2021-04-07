@@ -27,15 +27,16 @@ class ProductFormFactory
                 'Please use lowercase alphanumeric characters (a-z, 0-9) with optional underscore',
                 '^[a-z0-9_]*$')
             ->setOption('description',
-                'Code for identification, please use lowercase alphanumeric characters with optional underscore');
+                'Code for identification, ' .
+                'please use lowercase alphanumeric characters with optional underscore, eg: "book_1"');
         $form->addText('name', 'Name')
             ->setRequired()
-            ->setOption('description', 'Name of the product');
+            ->setOption('description', 'Name of the product, eg: "Book of the universe"');
         $form->addText('price', 'Price')
             ->setRequired()
             ->setHtmlAttribute('min', '0')
             ->addRule(Form::INTEGER, 'Enter a number.')
-            ->setOption('description', 'Number, eg: 100');
+            ->setOption('description', 'A number, eg: "100"');
         $form->addTextArea('description', 'Description');
 
         $form->addSubmit('submit', 'Save');
