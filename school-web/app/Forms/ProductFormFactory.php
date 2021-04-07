@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php declare(strict_types=1);
 
 namespace App\Forms;
 
@@ -23,7 +23,11 @@ class ProductFormFactory
 
         $form->addText('code', 'Code')
             ->setRequired()
-            ->setOption('description', 'Code for identification, must be unique');
+            ->addRule(Form::PATTERN,
+                'Please use lowercase alphanumeric characters (a-z, 0-9) with optional underscore',
+                '^[a-z0-9_]*$')
+            ->setOption('description',
+                'Code for identification, please use lowercase alphanumeric characters with optional underscore');
         $form->addText('name', 'Name')
             ->setRequired()
             ->setOption('description', 'Name of the product');
