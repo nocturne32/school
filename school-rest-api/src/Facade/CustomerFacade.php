@@ -18,6 +18,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Exception;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\Form\FormFactoryInterface;
+use function DusanKasan\Knapsack\values;
 
 class CustomerFacade
 {
@@ -44,7 +45,7 @@ class CustomerFacade
         return $customer ? $this->dtoMapper->mapFromEntity($customer) : null;
     }
 
-    public function create($data): CustomerResponseDto
+    public function create(array $data): CustomerResponseDto
     {
         $customer = new Customer;
 
@@ -65,7 +66,7 @@ class CustomerFacade
         return $this->dtoMapper->mapFromEntity($customer);
     }
 
-    public function update(int $id, $data): ?CustomerResponseDto
+    public function update(int $id, array $data): ?CustomerResponseDto
     {
         $customer = $this->repository->find($id);
 
@@ -74,7 +75,7 @@ class CustomerFacade
         }
 
         $form = $this->formFactory->create(UpdateCustomerType::class, $customer);
-        $form->submit($data);
+        $form->submit($data, false);
 
         if (!$form->isSubmitted() || !$form->isValid()) {
             throw new CustomerUpdateFailedException((string)$form->getErrors());

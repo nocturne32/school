@@ -44,7 +44,7 @@ class ProductFacade
         return $product ? $this->dtoMapper->mapFromEntity($product) : null;
     }
 
-    public function create($data): ProductResponseDto
+    public function create(array $data): ProductResponseDto
     {
         $product = new Product;
 
@@ -65,7 +65,7 @@ class ProductFacade
         return $this->dtoMapper->mapFromEntity($product);
     }
 
-    public function update(int $id, $data): ?ProductResponseDto
+    public function update(int $id, array $data): ?ProductResponseDto
     {
         $product = $this->repository->find($id);
 
@@ -74,7 +74,7 @@ class ProductFacade
         }
 
         $form = $this->formFactory->create(UpdateProductType::class, $product);
-        $form->submit($data);
+        $form->submit($data, false);
 
         if (!$form->isSubmitted() || !$form->isValid()) {
             throw new ProductUpdateFailedException((string)$form->getErrors());

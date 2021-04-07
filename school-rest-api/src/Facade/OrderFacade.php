@@ -43,7 +43,7 @@ class OrderFacade
         return $order ? $this->dtoMapper->mapFromEntity($order) : null;
     }
 
-    public function create($data): OrderResponseDto
+    public function create(array $data): OrderResponseDto
     {
         $order = new Order;
 
@@ -64,7 +64,7 @@ class OrderFacade
     }
 
 
-    public function update(int $id, $data): ?OrderResponseDto
+    public function update(int $id, array $data): ?OrderResponseDto
     {
         $order = $this->repository->find($id);
 
