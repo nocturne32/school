@@ -30,14 +30,29 @@ class Customer
     private string $email;
 
     /**
-     * @ORM\Column(type="string", length=191, nullable=true)
+     * @ORM\Column(type="string", length=191)
      */
-    private ?string $firstname = '';
+    private string $firstname;
 
     /**
-     * @ORM\Column(type="string", length=191, nullable=true)
+     * @ORM\Column(type="string", length=191)
      */
-    private ?string $lastname = '';
+    private string $lastname;
+
+    /**
+     * @ORM\Column(type="string", length=191)
+     */
+    private string $street;
+
+    /**
+     * @ORM\Column(type="string", length=191)
+     */
+    private string $city;
+
+    /**
+     * @ORM\Column(type="string", length=191)
+     */
+    private string $postal_code;
 
     /**
      * @ORM\Column(type="datetime")
@@ -54,7 +69,7 @@ class Customer
         return $this->id;
     }
 
-    public function getEmail(): ?string
+    public function getEmail(): string
     {
         return $this->email;
     }
@@ -66,27 +81,60 @@ class Customer
         return $this;
     }
 
-    public function getFirstname(): ?string
+    public function getFirstname(): string
     {
         return $this->firstname;
     }
 
-    public function setFirstname(?string $firstname): self
+    public function setFirstname(string $firstname): self
     {
         $this->firstname = $firstname;
 
         return $this;
     }
 
-    public function getLastname(): ?string
+    public function getLastname(): string
     {
         return $this->lastname;
     }
 
-    public function setLastname(?string $lastname): self
+    public function setLastname(string $lastname): self
     {
         $this->lastname = $lastname;
 
+        return $this;
+    }
+
+    public function getStreet(): string
+    {
+        return $this->street;
+    }
+
+    public function setStreet(string $street): Customer
+    {
+        $this->street = $street;
+        return $this;
+    }
+
+    public function getCity(): string
+    {
+        return $this->city;
+    }
+
+    public function setCity(string $city): Customer
+    {
+        $this->city = $city;
+        return $this;
+    }
+
+    public function getPostalCode(): string
+    {
+        return $this->postal_code;
+    }
+
+    public function setPostalCode(string $postalCode): Customer
+    {
+        $this->postal_code = $postalCode;
         return $this;
     }
 

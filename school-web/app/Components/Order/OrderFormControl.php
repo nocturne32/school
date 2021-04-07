@@ -61,7 +61,10 @@ class OrderFormControl extends BaseControl
             $customer = ArrayHash::from([
                 'email' => $values->email,
                 'firstname' => $values->firstname,
-                'lastname' => $values->lastname
+                'lastname' => $values->lastname,
+                'street' => $values->street,
+                'city' => $values->city,
+                'postal_code' => $values->postal_code
             ]);
 
             $customer = $this->customerFacade->createOrUpdateCustomer($customer);

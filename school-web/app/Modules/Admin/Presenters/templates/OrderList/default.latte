@@ -22,6 +22,7 @@
                 <th>Order ID</th>
                 <th>Customer</th>
                 <th>Ordered at</th>
+                <th>Status</th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -31,7 +32,13 @@
                 <td>{$order->id}</td>
                 <td><a n:href="Customer: $order->customer->id">{$order->customer->email}</a></td>
                 <td>{$order->ordered_at|date:'d.m.Y H:i:s'}</td>
+                <td>{$order->is_paid ? 'Paid' : 'Not paid'}</td>
                 <td>
+                    {if $order->is_paid}
+                        <a n:href="markAsPaid! $order->id, false" class="btn btn-sm btn-warning">Mark as unpaid</a>
+                    {else}
+                        <a n:href="markAsPaid! $order->id, true" class="btn btn-sm btn-success">Mark as paid</a>
+                    {/if}
                     <a n:href="Order: $order->id" class="btn btn-sm btn-primary">Detail</a>
                     <a n:href="deleteOrder! $order->id"
                             class="btn btn-sm btn-danger"

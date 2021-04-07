@@ -33,7 +33,7 @@ class ProductController extends AbstractApiController
             'data' => $product
         ]);
     }
-    
+
     public function createAction(Request $request, ProductFacade $productFacade): Response
     {
         try {

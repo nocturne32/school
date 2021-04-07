@@ -39,6 +39,11 @@ class Order
      */
     private DateTimeInterface $ordered_at;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private bool $isPaid = false;
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
@@ -91,9 +96,21 @@ class Order
         return $this->ordered_at;
     }
 
-    public function setOrderedAt(DateTimeInterface $ordered_at): self
+    public function setOrderedAt(DateTimeInterface $orderedAt): self
     {
-        $this->ordered_at = $ordered_at;
+        $this->ordered_at = $orderedAt;
+
+        return $this;
+    }
+
+    public function isPaid(): bool
+    {
+        return $this->isPaid;
+    }
+
+    public function setIsPaid(bool $isPaid): self
+    {
+        $this->isPaid = $isPaid;
 
         return $this;
     }

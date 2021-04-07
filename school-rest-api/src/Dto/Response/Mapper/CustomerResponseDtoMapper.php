@@ -18,7 +18,11 @@ class CustomerResponseDtoMapper
             ->setId($customer->getId())
             ->setEmail($customer->getEmail())
             ->setFirstname($customer->getFirstname())
-            ->setLastname($customer->getLastname());
+            ->setLastname($customer->getLastname())
+            ->setStreet($customer->getStreet())
+            ->setCity($customer->getCity())
+            ->setPostalCode($customer->getPostalCode())
+            ->setCreatedAt($customer->getCreatedAt());
 
         return $mapped;
     }

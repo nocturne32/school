@@ -30,4 +30,18 @@ class OrderFacade
     {
         return $this->client->getOrders()->delete($orderId);
     }
+
+    public function markAsPaid(int $orderId)
+    {
+        $order = ArrayHash::from(['is_paid' => true]);
+
+        return $this->client->getOrders()->put($orderId, $order);
+    }
+
+    public function markAsUnpaid(int $orderId)
+    {
+        $order = ArrayHash::from(['is_paid' => false]);
+
+        return $this->client->getOrders()->put($orderId, $order);
+    }
 }

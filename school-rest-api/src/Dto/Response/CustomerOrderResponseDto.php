@@ -31,71 +31,59 @@ class CustomerOrderResponseDto
     private float $totalPrice;
 
     /**
-     * @return int
+     * @Serialization\Type("bool")
      */
+    private bool $isPaid = false;
+
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * @param int $id
-     * @return CustomerOrderResponseDto
-     */
     public function setId(int $id): CustomerOrderResponseDto
     {
         $this->id = $id;
         return $this;
     }
 
-    /**
-     * @return array
-     */
     public function getProducts(): array
     {
         return $this->products;
     }
 
-    /**
-     * @param array $products
-     * @return CustomerOrderResponseDto
-     */
     public function setProducts(array $products): CustomerOrderResponseDto
     {
         $this->products = $products;
         return $this;
     }
 
-    /**
-     * @return DateTimeInterface
-     */
     public function getOrderedAt(): DateTimeInterface
     {
         return $this->ordered_at;
     }
 
-    /**
-     * @param DateTimeInterface $ordered_at
-     * @return CustomerOrderResponseDto
-     */
-    public function setOrderedAt(DateTimeInterface $ordered_at): CustomerOrderResponseDto
+    public function setOrderedAt(DateTimeInterface $orderedAt): CustomerOrderResponseDto
     {
-        $this->ordered_at = $ordered_at;
+        $this->ordered_at = $orderedAt;
         return $this;
     }
 
-    /**
-     * @return float
-     */
+    public function isPaid(): bool
+    {
+        return $this->isPaid;
+    }
+
+    public function setIsPaid(bool $isPaid): self
+    {
+        $this->isPaid = $isPaid;
+        return $this;
+    }
+
     public function getTotalPrice(): float
     {
         return $this->totalPrice;
     }
 
-    /**
-     * @param float $totalPrice
-     * @return CustomerOrderResponseDto
-     */
     public function setTotalPrice(float $totalPrice): CustomerOrderResponseDto
     {
         $this->totalPrice = $totalPrice;

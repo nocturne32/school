@@ -10,7 +10,8 @@ use App\Entity\Order;
 use App\Exception\OrderCreateFailedException;
 use App\Exception\OrderDeleteFailedException;
 use App\Exception\OrderUpdateFailedException;
-use App\Form\OrderType;
+use App\Form\CreateOrderType;
+use App\Form\UpdateOrderType;
 use App\Repository\OrderRepository;
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 use Doctrine\ORM\EntityManagerInterface;
@@ -46,11 +47,11 @@ class OrderFacade
     {
         $order = new Order;
 
-        $form = $this->formFactory->create(OrderType::class, $order);
+        $form = $this->formFactory->create(CreateOrderType::class, $order);
         $form->submit($data);
 
         if (!$form->isSubmitted() || !$form->isValid()) {
-            throw new OrderCreateFailedException("Customer or products don't exist");
+            throw new OrderCreateFailedException("All fields are required, customer and products must exist");
         }
 
         try {
@@ -71,11 +72,11 @@ class OrderFacade
             return null;
         }
 
-        $form = $this->formFactory->create(OrderType::class, $order);
+        $form = $this->formFactory->create(UpdateOrderType::class, $order);
         $form->submit($data, false);
 
         if (!$form->isSubmitted() || !$form->isValid()) {
-            throw new OrderUpdateFailedException((string)$form->getErrors());
+            throw new OrderUpdateFailedException("Customer or products must exist");
         }
 
         try {

@@ -1,4 +1,4 @@
-{block title}Customer {$customer->email}{/block}
+{block title}Customer #{$customer->id}{/block}
 
 {block content}
 
@@ -17,8 +17,19 @@
 
     <div class="col-lg-12">
 
-        <h2>Customer {$customer->email}</h2>
-        <p>{$customer->firstname ?? ''} {$customer->lastname ?? ''}</p>
+        <h2>{include title}</h2>
+        <p>
+            <strong>Email:</strong> {$customer->email}
+            <br>
+            <strong>Fullname:</strong> {$customer->firstname} {$customer->lastname}
+            <br>
+            <strong>Street:</strong> {$customer->street}
+            <br>
+            <strong>City:</strong> {$customer->city}
+            <br>
+            <strong>Postal code:</strong> {$customer->postal_code}
+
+        </p>
 
         <hr>
 
@@ -29,6 +40,7 @@
                 <th>Order ID</th>
                 <th>Customer</th>
                 <th>Ordered at</th>
+                <th>Status</th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -38,7 +50,13 @@
                 <td>{$order->id}</td>
                 <td><a n:href="Customer: $customer->id">{$customer->email}</a></td>
                 <td>{$order->ordered_at|date:'d.m.Y H:i:s'}</td>
+                <td>{$order->is_paid ? 'Paid' : 'Not paid'}</td>
                 <td>
+                    {if $order->is_paid}
+                        <a n:href="markAsPaid! $order->id, false" class="btn btn-sm btn-warning">Mark as unpaid</a>
+                    {else}
+                        <a n:href="markAsPaid! $order->id, true" class="btn btn-sm btn-success">Mark as paid</a>
+                    {/if}
                     <a n:href="Order: $order->id" class="btn btn-sm btn-primary">Detail</a>
                     <a n:href="deleteOrder! $order->id"
                             class="btn btn-sm btn-danger"

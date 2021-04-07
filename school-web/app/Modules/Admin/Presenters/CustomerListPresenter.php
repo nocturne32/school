@@ -41,7 +41,7 @@ final class CustomerListPresenter extends BasePresenter
             $this->flashMessage('Customer deleted', 'alert-warning');
 
         } catch (ClientException $e) {
-            $this->flashMessage($e->getMessage(), 'alert-warning');
+            $this->flashMessage($e->getMessage(), 'alert-danger');
         }
 
         $this->redirect('this');

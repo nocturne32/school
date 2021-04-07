@@ -7,10 +7,12 @@ namespace App\Facade;
 use App\Dto\Response\Mapper\ProductResponseDtoMapper;
 use App\Dto\Response\ProductResponseDto;
 use App\Entity\Product;
+use App\Exception\OrderCreateFailedException;
 use App\Exception\ProductCreateFailedException;
 use App\Exception\ProductDeleteFailedException;
 use App\Exception\ProductUpdateFailedException;
-use App\Form\ProductType;
+use App\Form\CreateProductType;
+use App\Form\UpdateProductType;
 use App\Repository\ProductRepository;
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 use Doctrine\ORM\EntityManagerInterface;
@@ -46,11 +48,11 @@ class ProductFacade
     {
         $product = new Product;
 
-        $form = $this->formFactory->create(ProductType::class, $product);
+        $form = $this->formFactory->create(CreateProductType::class, $product);
         $form->submit($data);
 
         if (!$form->isSubmitted() || !$form->isValid()) {
-            throw new ProductCreateFailedException((string)$form->getErrors());
+            throw new ProductCreateFailedException("All fields except description are required");
         }
 
         try {
@@ -71,7 +73,7 @@ class ProductFacade
             return null;
         }
 
-        $form = $this->formFactory->create(ProductType::class, $product);
+        $form = $this->formFactory->create(UpdateProductType::class, $product);
         $form->submit($data);
 
         if (!$form->isSubmitted() || !$form->isValid()) {

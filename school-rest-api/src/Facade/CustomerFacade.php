@@ -10,7 +10,8 @@ use App\Entity\Customer;
 use App\Exception\CustomerCreateFailedException;
 use App\Exception\CustomerDeleteFailedException;
 use App\Exception\CustomerUpdateFailedException;
-use App\Form\CustomerType;
+use App\Form\CreateCustomerType;
+use App\Form\UpdateCustomerType;
 use App\Repository\CustomerRepository;
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 use Doctrine\ORM\EntityManagerInterface;
@@ -47,11 +48,11 @@ class CustomerFacade
     {
         $customer = new Customer;
 
-        $form = $this->formFactory->create(CustomerType::class, $customer);
+        $form = $this->formFactory->create(CreateCustomerType::class, $customer);
         $form->submit($data);
 
         if (!$form->isSubmitted() || !$form->isValid()) {
-            throw new CustomerCreateFailedException((string)$form->getErrors());
+            throw new CustomerCreateFailedException('All fields are required');
         }
 
         try {
@@ -72,7 +73,7 @@ class CustomerFacade
             return null;
         }
 
-        $form = $this->formFactory->create(CustomerType::class, $customer);
+        $form = $this->formFactory->create(UpdateCustomerType::class, $customer);
         $form->submit($data);
 
         if (!$form->isSubmitted() || !$form->isValid()) {

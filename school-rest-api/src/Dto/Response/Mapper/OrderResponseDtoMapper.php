@@ -30,6 +30,7 @@ class OrderResponseDtoMapper
             ->setCustomer($this->customerResponseDtoMapper->mapFromEntity($order->getCustomer()))
             ->setOrderedAt($order->getOrderedAt())
             ->setProducts($this->productResponseDtoMapper->mapFromCollection($order->getProducts()))
+            ->setIsPaid($order->isPaid())
             ->setTotalPrice($order->getTotalPrice());
 
         return $mapped;

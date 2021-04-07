@@ -27,6 +27,12 @@ class OrderFormFactory
             ->setRequired();
         $form->addText('lastname', 'Last name')
             ->setRequired();
+        $form->addText('street', 'Street')
+            ->setRequired();
+        $form->addText('city', 'City')
+            ->setRequired();
+        $form->addText('postal_code', 'Postal code')
+            ->setRequired();
         $form->addCheckboxList('products', 'Products')
             ->setRequired();
 

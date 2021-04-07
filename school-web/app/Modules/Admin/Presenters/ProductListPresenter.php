@@ -41,7 +41,7 @@ final class ProductListPresenter extends BasePresenter
             $this->flashMessage('Product deleted', 'alert-warning');
 
         } catch (ClientException $e) {
-            $this->flashMessage($e->getMessage(), 'alert-warning');
+            $this->flashMessage($e->getMessage(), 'alert-danger');
         }
 
         $this->redirect('this');

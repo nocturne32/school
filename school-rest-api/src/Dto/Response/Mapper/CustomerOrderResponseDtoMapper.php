@@ -26,6 +26,7 @@ class CustomerOrderResponseDtoMapper
             ->setId($order->getId())
             ->setOrderedAt($order->getOrderedAt())
             ->setProducts($this->productResponseDtoMapper->mapFromCollection($order->getProducts()))
+            ->setIsPaid($order->isPaid())
             ->setTotalPrice($order->getTotalPrice());
 
         return $mapped;

@@ -43,9 +43,33 @@ final class OrderListPresenter extends BasePresenter
             $this->flashMessage('Order deleted', 'alert-warning');
 
         } catch (ClientException $e) {
-            $this->flashMessage($e->getMessage(), 'alert-warning');
+            $this->flashMessage($e->getMessage(), 'alert-danger');
         }
 
         $this->redirect('this');
     }
+
+    /**
+     * @secured
+     * @param int $orderId
+     * @param bool $isPaid
+     * @throws Nette\Application\AbortException
+     */
+    public function handleMarkAsPaid(int $orderId, bool $isPaid = true): void
+    {
+        try {
+            if ($isPaid) {
+                $this->orderFacade->markAsPaid($orderId);
+                $this->flashMessage('Order marked as paid', 'alert-success');
+            } else {
+                $this->orderFacade->markAsUnpaid($orderId);
+                $this->flashMessage('Order marked as unpaid', 'alert-warning');
+            }
+        } catch (ClientException $e) {
+            $this->flashMessage($e->getMessage(), 'alert-danger');
+        }
+
+        $this->redirect('this');
+    }
+
 }

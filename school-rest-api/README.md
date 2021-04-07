@@ -49,13 +49,19 @@ MariaDB database.
             "id": 1,
             "email": "lukas@test.tt",
             "firstname": "Lukáš",
-            "lastname": "Buďějovický"
+            "lastname": "Buďějovický",
+            "street": "Nějaká 123",
+            "city": "Okrajovice",
+            "postal_code": "12332"
         },
         {
             "id": 2,
             "email": "matej@test.tt",
             "firstname": "Matěj",
-            "lastname": "Dobrovický"
+            "lastname": "Dobrovický",
+            "street": "Odlišná 1",
+            "city": "Někdevice",
+            "postal_code": "32112"
         }
     ]
 }
@@ -65,16 +71,19 @@ MariaDB database.
 ```json5
 //request
 {
-    "email": "test@test.tt",
-    "firstname": "FirstnameTest",
-    "lastname": "LastnameTest"
+    "email": "lukas@test.tt",
+    "firstname": "Lukáš",
+    "lastname": "Buďějovický",
+    "street": "Nějaká 123",
+    "city": "Okrajovice",
+    "postal_code": "12332"
 }
 ```
 ```json5
 //response
 {
     "code": 200,
-    "message": "Customer with email test@test.tt created"
+    "message": "Customer with email lukas@test.tt created"
 }
 ```
 ### Detail
@@ -88,7 +97,10 @@ MariaDB database.
         "id": 1,
         "email": "lukas@test.tt",
         "firstname": "Lukáš",
-        "lastname": "Buďějovický"
+        "lastname": "Buďějovický",
+        "street": "Nějaká 123",
+        "city": "Okrajovice",
+        "postal_code": "12332"
     }
 }
 ```
@@ -98,9 +110,8 @@ MariaDB database.
 ```json5
 //request
 {
-    "email": "test@test.tt",
-    "firstname": "FirstnameTest",
-    "lastname": "LastnameTest"
+    "email": "nebudejovicky@test.tt",
+    "lastname": "Nebudějovický"
 }
 ```
 ```json5
@@ -129,9 +140,12 @@ MariaDB database.
     "data": {
         "customer": {
             "id": 1,
-            "email": "test@mail.cz",
+            "email": "lukas@test.tt",
             "firstname": "Lukáš",
-            "lastname": "Buďějovický"
+            "lastname": "Buďějovický",
+            "street": "Nějaká 123",
+            "city": "Okrajovice",
+            "postal_code": "12332"
         },
         "orders": [
             {
@@ -159,6 +173,7 @@ MariaDB database.
     }
 }
 ```
+
 ## Products
 ### List
 `[GET] http://127.0.0.1:8000/api/products` 
@@ -262,9 +277,12 @@ MariaDB database.
             "id": 1,
             "customer": {
                 "id": 1,
-                "email": "test@mail.cz",
+                "email": "lukas@test.tt",
                 "firstname": "Lukáš",
-                "lastname": "Buďějovický"
+                "lastname": "Buďějovický",
+                "street": "Nějaká 123",
+                "city": "Okrajovice",
+                "postal_code": "12332"
             },
             "products": [
                 {
@@ -283,6 +301,7 @@ MariaDB database.
                 }
             ],
             "ordered_at": "2021-04-03T11:20:42+02:00",
+            "is_paid": false,
             "total_price": 30.0
         }
     ]
@@ -340,6 +359,7 @@ MariaDB database.
             }
         ],
         "ordered_at": "2021-04-03T11:20:42+02:00",
+        "is_paid:": false,
         "total_price": 30.0
     }
 }
@@ -349,10 +369,7 @@ MariaDB database.
 ```json5
 //request
 {
-    "customer": 1,
-    "products": [
-        3
-    ]
+    "is_paid": true
 }
 ```
 ```json5
