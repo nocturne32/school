@@ -31,6 +31,7 @@ class Order
 
     /**
      * @ORM\ManyToMany(targetEntity=Product::class)
+     * @ORM\JoinColumn(nullable=false)
      */
     private Collection $products;
 
