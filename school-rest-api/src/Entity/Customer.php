@@ -32,12 +32,12 @@ class Customer
     /**
      * @ORM\Column(type="string", length=191, nullable=true)
      */
-    private ?string $firstname;
+    private ?string $firstname = '';
 
     /**
      * @ORM\Column(type="string", length=191, nullable=true)
      */
-    private ?string $lastname;
+    private ?string $lastname = '';
 
     /**
      * @ORM\Column(type="datetime")

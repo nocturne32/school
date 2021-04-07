@@ -22,12 +22,12 @@ class CustomerResponseDto
     /**
      * @Serialization\Type("string")
      */
-    private ?string $firstname;
+    private ?string $firstname = '';
 
     /**
      * @Serialization\Type("string")
      */
-    private ?string $lastname;
+    private ?string $lastname = '';
 
     /**
      * @return int
