@@ -2,7 +2,7 @@
 
 This is a school project created by David Pocar.
 
-The goal of the project was to create a web application and REST API to manage Customers, Products and Orders.
+The goal of the project was to create a web application and REST API for managing Customers, Products and Orders.
 
 # REST API
 `yarn serve-api`
