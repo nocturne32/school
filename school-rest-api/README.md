@@ -10,6 +10,11 @@ The goal of this project was to create a REST API for managing Customers, Produc
 2. `php bin/console doctrine:database:create`
 3. `php bin/console doctrine:schema:create`
 
+# Localhost
+`yarn serve-api`
+or 
+`php -S localhost:8081 -t school-rest-api/public` 
+
 # Architecture
 
 [Architecture sketch](https://i.imgur.com/8TJSxyZ.png)
