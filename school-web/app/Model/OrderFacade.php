@@ -23,7 +23,7 @@ class OrderFacade
 
     public function findOrderById(int $orderId): ArrayHash
     {
-        return ArrayHash::from($this->client->getOrders()->get($orderId));
+        return ArrayHash::from($this->client->getOrders()->get($orderId)['data']);
     }
 
     public function deleteById(int $orderId): array
@@ -31,14 +31,14 @@ class OrderFacade
         return $this->client->getOrders()->delete($orderId);
     }
 
-    public function markAsPaid(int $orderId)
+    public function markAsPaid(int $orderId): array
     {
         $order = ArrayHash::from(['is_paid' => true]);
 
         return $this->client->getOrders()->put($orderId, $order);
     }
 
-    public function markAsUnpaid(int $orderId)
+    public function markAsUnpaid(int $orderId): array
     {
         $order = ArrayHash::from(['is_paid' => false]);
 

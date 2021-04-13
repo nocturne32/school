@@ -100,14 +100,14 @@ class ProductFormControl extends BaseControl
 
         $form->onSuccess[] = function (Form $form, ArrayHash $values): void {
             try {
-                $this->productFacade->updateProduct($this->productId, $values);
+                $response = $this->productFacade->updateProduct($this->productId, $values);
 
             } catch (ClientException $e) {
                 $form->addError($e->getMessage());
                 return;
             }
 
-            $this->presenter->flashMessage('Product updated!', 'alert-success');
+            $this->presenter->flashMessage($response['message'], 'alert-success');
             $this->resolveRedirect();
         };
 

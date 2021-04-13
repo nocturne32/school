@@ -37,8 +37,8 @@ final class ProductListPresenter extends BasePresenter
     public function handleDeleteProduct(int $productId): void
     {
         try {
-            $this->productFacade->deleteById($productId);
-            $this->flashMessage('Product deleted', 'alert-warning');
+            $response = $this->productFacade->deleteById($productId);
+            $this->flashMessage($response['message'], 'alert-warning');
 
         } catch (ClientException $e) {
             $this->flashMessage($e->getMessage(), 'alert-danger');

@@ -8,6 +8,7 @@ use App\Api\ApiClient;
 use App\Model\CustomerFacade;
 use App\Model\CustomerListFacade;
 use GuzzleHttp\Exception\ClientException;
+use http\Env\Response;
 use Nette;
 use Nette\Application\Responses\JsonResponse;
 use Psr\Http\Message\ResponseInterface;
@@ -37,8 +38,8 @@ final class CustomerListPresenter extends BasePresenter
     public function handleDeleteCustomer(int $customerId): void
     {
         try {
-            $this->customerFacade->deleteById($customerId);
-            $this->flashMessage('Customer deleted', 'alert-warning');
+            $response = $this->customerFacade->deleteById($customerId);
+            $this->flashMessage($response['message'], 'alert-warning');
 
         } catch (ClientException $e) {
             $this->flashMessage($e->getMessage(), 'alert-danger');

@@ -28,7 +28,7 @@ class ProductFacade
 
     public function getProductById(int $productId): ArrayHash
     {
-        return ArrayHash::from($this->client->getProducts()->get($productId));
+        return ArrayHash::from($this->client->getProducts()->get($productId)['data']);
     }
 
     public function deleteById(int $productId): array

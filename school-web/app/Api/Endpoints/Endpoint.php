@@ -8,13 +8,13 @@ use Nette\Utils\ArrayHash;
 
 interface Endpoint
 {
-    public function getAll();
+    public function getAll(): array;
 
-    public function get(int $id);
+    public function get(int $id): array;
 
-    public function post(ArrayHash $data);
+    public function post(ArrayHash $data): array;
 
-    public function put(int $id, ArrayHash $data);
+    public function put(int $id, ArrayHash $data): array;
 
-    public function delete(int $id);
+    public function delete(int $id): array;
 }

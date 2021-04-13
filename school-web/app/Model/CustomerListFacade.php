@@ -19,7 +19,7 @@ class CustomerListFacade
 
     public function findCustomers(): ArrayHash
     {
-        return ArrayHash::from($this->client->getCustomers()->getAll());
+        return ArrayHash::from($this->client->getCustomers()->getAll()['data'] );
     }
 
 

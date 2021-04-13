@@ -19,12 +19,12 @@ class ProductListFacade
 
     public function findProducts(): ArrayHash
     {
-        return ArrayHash::from($this->client->getProducts()->getAll());
+        return ArrayHash::from($this->client->getProducts()->getAll()['data']);
     }
 
     public function findProductsAsPairs(): array
     {
-        return Collection::from($this->client->getProducts()->getAll())
+        return Collection::from($this->client->getProducts()->getAll()['data'])
             ->mapcat(function ($product) {
                 return [$product['id'] => $product['name'] . ' - ' . $product['price'] . ' CZK'];
             })

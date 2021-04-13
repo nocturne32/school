@@ -39,8 +39,8 @@ final class OrderListPresenter extends BasePresenter
     public function handleDeleteOrder(int $orderId): void
     {
         try {
-            $this->orderFacade->deleteById($orderId);
-            $this->flashMessage('Order deleted', 'alert-warning');
+            $response = $this->orderFacade->deleteById($orderId);
+            $this->flashMessage($response['message'], 'alert-warning');
 
         } catch (ClientException $e) {
             $this->flashMessage($e->getMessage(), 'alert-danger');

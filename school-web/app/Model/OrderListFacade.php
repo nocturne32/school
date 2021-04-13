@@ -19,7 +19,7 @@ class OrderListFacade
     
     public function findOrders(): ArrayHash
     {
-        return ArrayHash::from($this->client->getOrders()->getAll());
+        return ArrayHash::from($this->client->getOrders()->getAll()['data']);
     }
 
 }

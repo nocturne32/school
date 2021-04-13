@@ -14,13 +14,13 @@ class OrdersEndpoint extends BaseEndpoint
     public function getAll(): array
     {
         $response = $this->client->get('orders');
-        return $this->handleResponse($response)['data'];
+        return $this->handleResponse($response);
     }
 
     public function get(int $orderId): array
     {
         $response = $this->client->get('orders/' . $orderId);
-        return $this->handleResponse($response)['data'];
+        return $this->handleResponse($response);
     }
 
     public function post(ArrayHash $data): array

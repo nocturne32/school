@@ -14,13 +14,13 @@ class CustomersEndpoint extends BaseEndpoint
     public function getAll(): array
     {
         $response = $this->client->get('customers');
-        return $this->handleResponse($response)['data'];
+        return $this->handleResponse($response);
     }
 
     public function get(int $customerId): array
     {
         $response = $this->client->get('customers/' . $customerId);
-        return $this->handleResponse($response)['data'];
+        return $this->handleResponse($response);
     }
 
     public function post(ArrayHash $data): array
@@ -50,6 +50,6 @@ class CustomersEndpoint extends BaseEndpoint
     public function getOrdersByCustomerId(int $customerId): array
     {
         $response = $this->client->get('customers/' . $customerId . '/orders');
-        return $this->handleResponse($response)['data'];
+        return $this->handleResponse($response);
     }
 }

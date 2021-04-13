@@ -23,7 +23,7 @@ class CustomerFacade
 
         if ($customer->count()) {
             $this->client->getCustomers()->put((int)$customer['id'], $customerData);
-            $customer = ArrayHash::from($this->client->getCustomers()->get($customer['id']));
+            $customer = ArrayHash::from($this->client->getCustomers()->get($customer['id'])['data']);
         } else {
             $this->client->getCustomers()->post($customerData);
             $customer = $this->findCustomerByEmail($customerData->email);
@@ -34,12 +34,12 @@ class CustomerFacade
 
     public function getCustomerById(int $customerId): ArrayHash
     {
-        return ArrayHash::from($this->client->getCustomers()->get($customerId));
+        return ArrayHash::from($this->client->getCustomers()->get($customerId)['data']);
     }
 
     public function findCustomerByEmail(string $email): ArrayHash
     {
-        return ArrayHash::from(Collection::from($this->client->getCustomers()->getAll())
+        return ArrayHash::from(Collection::from($this->client->getCustomers()->getAll()['data'])
             ->filter(function ($customer) use ($email) {
                 return $customer['email'] === $email;
             })->flatten()
@@ -48,7 +48,7 @@ class CustomerFacade
 
     public function findCustomerOrdersById(int $customerId): ArrayHash
     {
-        return ArrayHash::from($this->client->getCustomers()->getOrdersByCustomerId($customerId));
+        return ArrayHash::from($this->client->getCustomers()->getOrdersByCustomerId($customerId)['data']);
     }
 
     public function deleteById(int $customerId): array

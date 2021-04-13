@@ -14,13 +14,13 @@ class ProductsEndpoint extends BaseEndpoint
     public function getAll(): array
     {
         $response = $this->client->get('products');
-        return $this->handleResponse($response)['data'];
+        return $this->handleResponse($response);
     }
 
     public function get(int $productId): array
     {
         $response = $this->client->get('products/' . $productId);
-        return $this->handleResponse($response)['data'];
+        return $this->handleResponse($response);
     }
 
     public function post(ArrayHash $data): array
